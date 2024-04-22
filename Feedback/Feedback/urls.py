@@ -19,6 +19,8 @@ from django.urls import path
 from django.conf.urls.static import static
 from django.contrib.auth.views import LoginView
 from Myapp import views
+from django.conf import settings
+from django.conf.urls.static import static
 
 
 urlpatterns = [
@@ -38,6 +40,5 @@ urlpatterns = [
     path('delete-student/<int:student_id>/', views.delete_student, name='delete_student'),
     path('delete-feedback/<int:feedback_id>/', views.delete_feedback, name='delete_feedback'),
     path('logout_user/',views.logout_user,name="logout"),
-
-]
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

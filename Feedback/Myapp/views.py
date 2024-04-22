@@ -5,7 +5,8 @@ from .models import *
 
 # Create your views here.
 def home(request):
-    return render(request, 'home.html')
+    banner = Banners.objects.all()
+    return render(request, 'home.html', {'banner': banner})
 
 @login_required(login_url='login')
 def feedback_form(request):

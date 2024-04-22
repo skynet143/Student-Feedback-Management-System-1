@@ -40,5 +40,8 @@ class Admin_Dashboard(models.Model):
     total_faculties = models.IntegerField(default=0)
     total_feedback = models.IntegerField(default=0)
 
-    def __str__(self):
-        return str(self.total_students)
+
+
+class Banners(models.Model):
+    college_background=models.ImageField(upload_to='images/',null=True,blank=True)
+    college_logo=models.ImageField(upload_to='images/',null=True,blank=True)
